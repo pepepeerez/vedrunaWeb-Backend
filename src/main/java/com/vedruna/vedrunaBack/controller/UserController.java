@@ -26,7 +26,7 @@ public class UserController {
     
     private final UserService userService;
 
-    @GetMapping
+    @GetMapping()
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
@@ -36,7 +36,7 @@ public class UserController {
         return userService.getByEmail(email);
     }
 
-    @PostMapping
+    @PostMapping()
     public User createOrUpdate(@RequestParam String email, @RequestParam String name) {
         return userService.createOrUpdate(email, name);
     }
