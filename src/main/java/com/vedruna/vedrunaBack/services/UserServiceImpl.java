@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public List<User> getAllUsers() {

@@ -19,8 +19,7 @@ public class User {
     private String name;
     private String email;
     
-    private String githubLink;  // Editable para el usario
-    private String linkedinLink;  // Editable para el usario
-    private String curso;  // Editable para el usario
+    
+    
 
 }
