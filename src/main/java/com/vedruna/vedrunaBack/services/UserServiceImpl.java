@@ -31,12 +31,16 @@ public class UserServiceImpl implements UserService {
     // Crea o actualiza un usuario
     @Override
     public User createOrUpdate(String email, String name) {
+        // Validar que el email sea institucional
+        if (email == null || !email.endsWith("@a.vedrunasevillasj.es")) {
+            throw new IllegalArgumentException("Solo se permite iniciar sesión con correos institucionales (@a.vedrunasevillasj.es)");
+        }
+
         Optional<User> siExiste = userRepository.findByEmail(email);
 
-        if(siExiste.isPresent()) {
-            // Si el usuario existe, lo devolvemos
+        if (siExiste.isPresent()) {
+            // Si el usuario ya existe, lo devolvemos
             return siExiste.get();
-
         } else {
             // Si no existe, lo creamos
             User newUser = new User();

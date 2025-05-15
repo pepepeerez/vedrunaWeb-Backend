@@ -1,5 +1,6 @@
 package com.vedruna.vedrunaBack.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,21 +39,27 @@ public class PublicationServiceImpl implements PublicationService {
 
     @Override
     public Publication updateLike(String idPublicacion, String idUsuario) {
-        Optional<Publication> optionalPub = publicationRepository.findById(idPublicacion);
-        
+    Optional<Publication> optionalPub = publicationRepository.findById(idPublicacion);
+
         if (optionalPub.isPresent()) {
             Publication publication = optionalPub.get();
             List<String> likes = publication.getLike();
-            
-            if (likes.contains(idUsuario)) {
-                likes.remove(idUsuario); // quitar like
-            } else {
-                likes.add(idUsuario); // añadir like
+
+            if (likes == null) {
+                likes = new ArrayList<>();
             }
-            
+
+            if (likes.contains(idUsuario)) {
+                likes.remove(idUsuario); // Quitar like
+            } else {
+                likes.add(idUsuario); // Añadir like
+            }
+
+            publication.setLike(likes);
             return publicationRepository.save(publication);
         } else {
             throw new RuntimeException("Publicación no encontrada con ID: " + idPublicacion);
         }
     }
+
 }
