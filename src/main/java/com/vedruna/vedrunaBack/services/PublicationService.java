@@ -15,5 +15,5 @@ public interface PublicationService {
 
     Optional<Publication> getById(String id); // Obtener una publicacion por su id
 
-    void deletePublication(String id);
+    void deletePublication(String id);  // Eliminar una publicacion
 } 

@@ -21,6 +21,7 @@ public class Publication {
     private String idPublication;
     
     private String email;
+    private String name;
     private String title;
     private String description;
     private String image;
