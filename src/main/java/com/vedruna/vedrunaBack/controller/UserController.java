@@ -37,9 +37,12 @@ public class UserController {
         return userService.getByEmail(email);
     }
 
+    
     @PostMapping("/loginGoogle")
     public User loginWithGoogle(@RequestBody User user) {
         return userService.createOrUpdate(user.getEmail(), user.getName());
     }
+
+    
 
 }
