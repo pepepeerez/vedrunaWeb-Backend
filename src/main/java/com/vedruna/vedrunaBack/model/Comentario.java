@@ -21,6 +21,6 @@ public class Comentario {
     private String idPublication;
     private String email;
     private String name;
-    private String comentario;
+    private String mensaje;
     private LocalDateTime createdAt = LocalDateTime.now();
 }
