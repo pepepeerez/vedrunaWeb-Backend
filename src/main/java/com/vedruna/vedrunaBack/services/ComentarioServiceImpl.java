@@ -26,4 +26,9 @@ public class ComentarioServiceImpl implements ComentarioService {
         return comentariosRepository.findByIdPublication(idPublication);
     }
 
+    @Override
+    public void deleteComentario(String idComentario) {
+        comentariosRepository.deleteById(idComentario);
+    }
+
 }

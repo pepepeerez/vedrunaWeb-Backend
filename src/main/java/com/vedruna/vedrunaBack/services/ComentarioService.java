@@ -8,6 +8,7 @@ public interface ComentarioService {
 
     Comentario crearComentario (Comentario comentario);
     List<Comentario> getComentariosByIdPublication (String idPublication);
+    void deleteComentario(String idComentario);
 } 
 
 

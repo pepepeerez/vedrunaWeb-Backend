@@ -3,6 +3,7 @@ package com.vedruna.vedrunaBack.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,5 +32,10 @@ public class ComentarioController {
     @PostMapping
     public Comentario crearComentario(@RequestBody Comentario comentario) {
         return comentarioServiceImpl.crearComentario(comentario);
+    }
+
+    @DeleteMapping("/{idComentario}")
+    public void deleteComentario(@PathVariable String idComentario) {
+        comentarioServiceImpl.deleteComentario(idComentario);
     }
 }
