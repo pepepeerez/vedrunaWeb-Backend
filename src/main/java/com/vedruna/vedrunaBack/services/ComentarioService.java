@@ -6,9 +6,12 @@ import com.vedruna.vedrunaBack.model.Comentario;
 
 public interface ComentarioService {
 
-    Comentario crearComentario (Comentario comentario);
-    List<Comentario> getComentariosByIdPublication (String idPublication);
+    Comentario crearComentario(Comentario comentario);
+
+    List<Comentario> getComentariosByIdPublication(String idPublication);
+
     void deleteComentario(String idComentario);
-} 
 
-
+    // Nuevo método para contar comentarios
+    long countByIdPublication(String idPublication);
+}

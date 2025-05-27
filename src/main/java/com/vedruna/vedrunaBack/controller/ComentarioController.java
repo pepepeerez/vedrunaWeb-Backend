@@ -21,12 +21,18 @@ import lombok.AllArgsConstructor;
 @CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class ComentarioController {
-    
+
     private final ComentarioServiceImpl comentarioServiceImpl;
 
     @GetMapping("/{idPublication}")
     public List<Comentario> getComentariosByIdPublicacion(@PathVariable String idPublication) {
         return comentarioServiceImpl.getComentariosByIdPublication(idPublication);
+    }
+
+    // Nuevo endpoint para contar comentarios
+    @GetMapping("/count/{idPublication}")
+    public long countComentariosByIdPublicacion(@PathVariable String idPublication) {
+        return comentarioServiceImpl.countByIdPublication(idPublication);
     }
 
     @PostMapping

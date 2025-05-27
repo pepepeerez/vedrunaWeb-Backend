@@ -12,17 +12,16 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class ComentarioServiceImpl implements ComentarioService {
-    
+
     private final ComentarioRepository comentariosRepository;
 
     @Override
-    public Comentario crearComentario (Comentario comentario) {
+    public Comentario crearComentario(Comentario comentario) {
         return comentariosRepository.save(comentario);
     }
-    
 
     @Override
-    public List<Comentario> getComentariosByIdPublication (String idPublication) {
+    public List<Comentario> getComentariosByIdPublication(String idPublication) {
         return comentariosRepository.findByIdPublication(idPublication);
     }
 
@@ -31,4 +30,9 @@ public class ComentarioServiceImpl implements ComentarioService {
         comentariosRepository.deleteById(idComentario);
     }
 
+    // Nuevo método para contar comentarios
+    @Override
+    public long countByIdPublication(String idPublication) {
+        return comentariosRepository.countByIdPublication(idPublication);
+    }
 }
