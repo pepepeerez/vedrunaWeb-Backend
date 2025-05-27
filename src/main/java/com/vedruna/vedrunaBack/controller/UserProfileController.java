@@ -1,9 +1,11 @@
 package com.vedruna.vedrunaBack.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;  // Import añadido
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +25,8 @@ public class UserProfileController {
 
     private final UserProfileService userProfileService;
 
-    @GetMapping
-    public Optional<UserProfile> getProfileByEmail(@RequestParam String email) {
+    @GetMapping("/{email}")
+    public Optional<UserProfile> getProfileByEmail(@PathVariable String email) {
         return userProfileService.getByEmail(email);
     }
 
@@ -32,4 +34,10 @@ public class UserProfileController {
     public UserProfile createOrUpdateProfile(@RequestBody UserProfile userProfile) {
         return userProfileService.createOrUpdateProfile(userProfile);
     }
+
+    @GetMapping("/all")
+    public List<UserProfile> getAllProfiles() {
+        return userProfileService.getAllProfiles();
+    }
+
 }

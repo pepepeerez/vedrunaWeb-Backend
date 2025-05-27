@@ -16,10 +16,11 @@ public class UserProfile {
     @MongoId
     private String id;
 
-    private String email;           // Clave para buscar perfil único
-    private String ciclo;           // Ciclo formativo
-    private String curso;           // Curso (1º, 2º, etc)
-    private String descripcion;     // Descripción personal
-    private String githubLink;      // Link a GitHub (opcional)
-    private String linkedinLink;    // Link a LinkedIn (opcional)
+    private String name;            
+    private String email;           
+    private String ciclo;          
+    private String curso;  
+    private String descripcion;       
+    private String linkedinLink;    
+    private String githubLink;      
 }
