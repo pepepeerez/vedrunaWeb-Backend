@@ -18,7 +18,6 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/vedruna/comentarios")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class ComentarioController {
 

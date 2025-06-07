@@ -16,7 +16,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/vedruna/publications")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class PublicationController {
 

@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/vedruna/contacto")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class ContactMessageController {
 

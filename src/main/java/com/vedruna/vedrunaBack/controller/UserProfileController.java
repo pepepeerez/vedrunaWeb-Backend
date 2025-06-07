@@ -19,7 +19,6 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/vedruna/user-profile")
-@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class UserProfileController {
 
