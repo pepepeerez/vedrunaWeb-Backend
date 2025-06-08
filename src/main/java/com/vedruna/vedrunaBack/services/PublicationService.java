@@ -7,13 +7,42 @@ import com.vedruna.vedrunaBack.model.Publication;
 
 public interface PublicationService {
 
-    List<Publication> getAllPublications(); // Obtiene todas las publicaciones
+    /**
+     * Recupera todas las publicaciones disponibles.
+     *
+     * @return Lista de publicaciones.
+     */
+    List<Publication> getAllPublications();
 
-    Publication createPublication(Publication publication); // Crear una publicacion
+    /**
+     * Crea una nueva publicación.
+     *
+     * @param publication Publicación a crear.
+     * @return La publicación creada.
+     */
+    Publication createPublication(Publication publication);
 
-    Publication updateLike(String idPublicacion, String idUsuario);  // Dar like a una publicacion
+    /**
+     * Permite añadir o quitar un "like" a una publicación por parte de un usuario.
+     *
+     * @param idPublicacion ID de la publicación.
+     * @param idUsuario ID del usuario que da el like.
+     * @return Publicación actualizada.
+     */
+    Publication updateLike(String idPublicacion, String idUsuario);
 
-    Optional<Publication> getById(String id); // Obtener una publicacion por su id
+    /**
+     * Obtiene una publicación por su ID.
+     *
+     * @param id ID de la publicación.
+     * @return Publicación encontrada (si existe).
+     */
+    Optional<Publication> getById(String id);
 
-    void deletePublication(String id);  // Eliminar una publicacion
-} 
+    /**
+     * Elimina una publicación por su ID.
+     *
+     * @param id ID de la publicación a eliminar.
+     */
+    void deletePublication(String id);
+}

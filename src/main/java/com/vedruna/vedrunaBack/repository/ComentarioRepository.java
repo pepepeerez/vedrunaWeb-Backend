@@ -10,8 +10,9 @@ import com.vedruna.vedrunaBack.model.Comentario;
 @Repository
 public interface ComentarioRepository extends MongoRepository<Comentario, String> {
 
+    // Método para obtener comentarios por idPublication
     List<Comentario> findByIdPublication(String idPublication);
 
-    // Nuevo método para contar comentarios por idPublication
+    // Método para contar comentarios por idPublication
     long countByIdPublication(String idPublication);
 }

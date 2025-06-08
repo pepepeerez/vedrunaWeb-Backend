@@ -9,5 +9,7 @@ import com.vedruna.vedrunaBack.model.UserProfile;
 
 @Repository
 public interface UserProfileRepository extends MongoRepository<UserProfile, String> {
+    
+    // Buscar perfil por email
     Optional<UserProfile> findByEmail(String email);
 }

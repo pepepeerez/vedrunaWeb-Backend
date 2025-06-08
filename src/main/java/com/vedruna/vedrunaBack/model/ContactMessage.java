@@ -20,5 +20,5 @@ public class ContactMessage {
     private String email;
     private String mensaje;
 
-    private String fecha; // opcional: puedes guardar la fecha si quieres
+    private String fecha; 
 }

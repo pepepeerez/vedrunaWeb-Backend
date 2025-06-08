@@ -23,22 +23,44 @@ public class ComentarioController {
 
     private final ComentarioServiceImpl comentarioServiceImpl;
 
+    /**
+     * Obtiene todos los comentarios asociados a una publicación.
+     *
+     * @param idPublication ID de la publicación.
+     * @return Lista de comentarios.
+     */
     @GetMapping("/{idPublication}")
     public List<Comentario> getComentariosByIdPublicacion(@PathVariable String idPublication) {
         return comentarioServiceImpl.getComentariosByIdPublication(idPublication);
     }
 
-    // Nuevo endpoint para contar comentarios
+    /**
+     * Cuenta cuántos comentarios tiene una publicación.
+     *
+     * @param idPublication ID de la publicación.
+     * @return Número total de comentarios.
+     */
     @GetMapping("/count/{idPublication}")
     public long countComentariosByIdPublicacion(@PathVariable String idPublication) {
         return comentarioServiceImpl.countByIdPublication(idPublication);
     }
 
+    /**
+     * Crea un nuevo comentario.
+     *
+     * @param comentario Comentario a crear.
+     * @return Comentario creado.
+     */
     @PostMapping
     public Comentario crearComentario(@RequestBody Comentario comentario) {
         return comentarioServiceImpl.crearComentario(comentario);
     }
 
+    /**
+     * Elimina un comentario por su ID.
+     *
+     * @param idComentario ID del comentario a eliminar.
+     */
     @DeleteMapping("/{idComentario}")
     public void deleteComentario(@PathVariable String idComentario) {
         comentarioServiceImpl.deleteComentario(idComentario);
