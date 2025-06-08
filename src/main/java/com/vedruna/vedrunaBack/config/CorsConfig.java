@@ -14,7 +14,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                            "https://tu-frontend.vercel.app", // frontend en producción
+                            "https://vedruna-web.vercel.app/", // frontend en producción
                             "http://localhost:3000"                     //  desarrollo local
                         )
                         .allowedMethods("*")
